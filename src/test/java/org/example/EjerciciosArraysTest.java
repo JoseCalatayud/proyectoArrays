@@ -38,7 +38,7 @@ public class EjerciciosArraysTest {
     }
     @Test
     public void encontrarSegundoMasPequeñoTest () {
-        double [] muestra = {-212,-1114,5,65,-1,-7,-7,10};
+        double [] muestra = {-212,-1114,5,65,-1,-7,-7,10}; 
         assertTrue(cut.encontrarSegundoMasPequeño(muestra)==-212);
     }
     

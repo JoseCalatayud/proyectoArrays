@@ -41,5 +41,12 @@ public class EjerciciosArraysTest {
         double [] muestra = {-212,-1114,5,65,-1,-7,-7,10}; 
         assertTrue(cut.encontrarSegundoMasPequeño(muestra)==-212);
     }
+    @Test
+    void testCompararArreglos() {
+        int [] primerArreglo = {1,2,3,4};
+        int [] segundoArreglo = {1,2,3,4};
+        assertTrue(cut.compararArreglos(primerArreglo, segundoArreglo));
+    }
+
     
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class EjerciciosArrays {
 
     public String[] encontrarComunesEnArray(String[] lista1, String[] lista2) throws NullPointerException {
@@ -45,6 +47,22 @@ public class EjerciciosArrays {
             }
         }
         return segundoMasPequenio;
+    }
+
+    public boolean compararArreglos (int [] primerArreglo, int [] segundoArreglo){
+        
+        if( primerArreglo==null&&segundoArreglo==null || primerArreglo.length==0 && segundoArreglo.length==0){
+            return true;
+        }
+        if (primerArreglo.length!=segundoArreglo.length){
+            return false;
+        }
+        for (int i = 0; i < segundoArreglo.length; i++) {
+            if (primerArreglo[i]!=segundoArreglo[i]){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

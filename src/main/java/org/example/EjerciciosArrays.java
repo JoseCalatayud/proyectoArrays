@@ -69,9 +69,9 @@ public class EjerciciosArrays {
                 }
             }
         }
-        String [] resultadosArray = new String [resultados.size()];
+        String[] resultadosArray = new String[resultados.size()];
         for (int i = 0; i < resultadosArray.length; i++) {
-            resultadosArray[i]=resultados.get(i);
+            resultadosArray[i] = resultados.get(i);
         }
         return resultadosArray;
 
@@ -81,7 +81,7 @@ public class EjerciciosArrays {
         return elementoLista1.equals(elementoLista2) && !resultados.contains(elementoLista1);
     }
 
-    public double encontrarSegundoMasPequeño(double[] arreglo) throws NullPointerException {
+    public double encontrarSegundoMasPequenio(double[] arreglo) throws NullPointerException {
         double masPequenio = Double.MAX_VALUE;
         double segundoMasPequenio = Double.MAX_VALUE;
         for (double numero : arreglo) {
@@ -97,7 +97,11 @@ public class EjerciciosArrays {
         return segundoMasPequenio;
     }
 
-    public boolean compararArreglos(int[] primerArreglo, int[] segundoArreglo) {
+    public boolean compararArreglos(int[] primerArreglo, int[] segundoArreglo) throws Exception {
+
+        if (unoEsNulo(primerArreglo, segundoArreglo)) {
+            throw new Exception("Uno es nulo y otro no");
+        }
 
         if (primerArreglo == null && segundoArreglo == null
                 || primerArreglo.length == 0 && segundoArreglo.length == 0) {
@@ -112,6 +116,10 @@ public class EjerciciosArrays {
             }
         }
         return true;
+    }
+
+    private boolean unoEsNulo(int[] primerArreglo, int[] segundoArreglo) {
+        return primerArreglo == null && segundoArreglo != null || primerArreglo != null && segundoArreglo == null;
     }
 
 }

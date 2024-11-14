@@ -48,13 +48,13 @@ public class EjerciciosArraysTest {
     }
 
     @Test
-    public void encontrarSegundoMasPequeñoTest() {
-        double[] muestra = { -2129, -1114, 5, 65, -1, -7, -7, 10 };
-        assertTrue(cut.encontrarSegundoMasPequeño(muestra) == -1114);
+    public void encontrarSegundoMasPequenioTest() {
+        double[] muestra = { 4, 4, 4, 2, 2 };
+        assertTrue(cut.encontrarSegundoMasPequenio(muestra) == 4);
     }
 
     @Test
-    void testCompararArreglos() {
+    void testCompararArreglos() throws Exception {
         int[] primerArreglo = { 1, 2, 3, 4 };
         int[] segundoArreglo = { 1, 2, 3, 4 };
         assertTrue(cut.compararArreglos(primerArreglo, segundoArreglo));

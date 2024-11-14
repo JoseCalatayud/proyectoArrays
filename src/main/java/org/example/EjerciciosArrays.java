@@ -64,7 +64,7 @@ public class EjerciciosArrays {
 
         for (String elementoLista1 : lista1) {
             for (String elementoLista2 : lista2) {
-                if (elementoLista1.equals(elementoLista2) && !resultados.contains(elementoLista1)) {
+                if (puedoIncluirElemento(resultados, elementoLista1, elementoLista2)) {
                     resultados.add(elementoLista1);
                 }
             }
@@ -75,6 +75,10 @@ public class EjerciciosArrays {
         }
         return resultadosArray;
 
+    }
+
+    private boolean puedoIncluirElemento(ArrayList<String> resultados, String elementoLista1, String elementoLista2) {
+        return elementoLista1.equals(elementoLista2) && !resultados.contains(elementoLista1);
     }
 
     public double encontrarSegundoMasPequeño(double[] arreglo) throws NullPointerException {

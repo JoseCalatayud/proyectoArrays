@@ -18,11 +18,20 @@ public class EjerciciosArraysTest {
     public void encontrarComunesEnArrayTest() throws Exception {
 
         String[] frutas1 = { "patata", "cereza", "naranja", "pera" };
-        String[] frutas2 = { "patata", "manzana", "pera", "melon", "sandia", "ciruela" };
-        String[] resultado = { "patata", "pera" };
+        String[] frutas2 = { "patata", "manzana", "pera", "melon", "sandia", "ciruela", "patata", "patata" };
+        String[] resultado = { "patata", "patata", "patata", "pera" };
         assertArrayEquals(resultado, cut.encontrarComunesEnArray(frutas1, frutas2));
 
+    }@Test
+    public void encontrarComunesEnArrayBisTest() throws Exception {
+
+        String[] frutas1 = { "patata", "cereza", "naranja", "pera" };
+        String[] frutas2 = { "patata", "manzana", "pera", "melon", "sandia", "ciruela", "patata", "patata" };
+        String[] resultado = { "patata", "pera" };
+        assertArrayEquals(resultado, cut.encontrarComunesEnArrayBis(frutas1, frutas2));
+
     }
+
     @Test
     public void encontrarComunesEnArray_ArrayVacio() throws Exception {
         String[] frutas1 = {};
@@ -30,23 +39,25 @@ public class EjerciciosArraysTest {
         String[] resultado = {};
         assertArrayEquals(resultado, cut.encontrarComunesEnArray(frutas1, frutas2));
     }
+
     @Test
     public void encontrarComunesEnArray_ArrayNulo() throws Exception {
         String[] frutas1 = null;
         String[] frutas2 = { "patata", "manzana", "pera", "melon", "sandia", "ciruela" };
-        assertThrows(Exception.class, ()-> cut.encontrarComunesEnArray(frutas1, frutas2));
+        assertThrows(Exception.class, () -> cut.encontrarComunesEnArray(frutas1, frutas2));
     }
+
     @Test
-    public void encontrarSegundoMasPequeñoTest () {
-        double [] muestra = {-2129,-1114,5,65,-1,-7,-7,10}; 
-        assertTrue(cut.encontrarSegundoMasPequeño(muestra)==-1114);
+    public void encontrarSegundoMasPequeñoTest() {
+        double[] muestra = { -2129, -1114, 5, 65, -1, -7, -7, 10 };
+        assertTrue(cut.encontrarSegundoMasPequeño(muestra) == -1114);
     }
+
     @Test
     void testCompararArreglos() {
-        int [] primerArreglo = {1,2,3,4};
-        int [] segundoArreglo = {1,2,3,4};
+        int[] primerArreglo = { 1, 2, 3, 4 };
+        int[] segundoArreglo = { 1, 2, 3, 4 };
         assertTrue(cut.compararArreglos(primerArreglo, segundoArreglo));
     }
 
-    
 }

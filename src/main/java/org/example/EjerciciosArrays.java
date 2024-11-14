@@ -34,18 +34,18 @@ public class EjerciciosArrays {
     }
 
     public double encontrarSegundoMasPequeño(double[] arreglo) throws NullPointerException {
-        double masPequenio = arreglo[0];
+        double masPequenio = Double.MAX_VALUE;
         double segundoMasPequenio = Double.MAX_VALUE;
         for (double numero : arreglo) {
             if (masPequenio > numero) {
+                segundoMasPequenio=masPequenio;
                 masPequenio = numero;
             }
-        }
-        for (double d : arreglo) {
-            if (segundoMasPequenio > d && d != masPequenio) {
-                segundoMasPequenio = d;
+            if(segundoMasPequenio>numero&&numero!=masPequenio){
+                segundoMasPequenio=numero;
             }
         }
+        
         return segundoMasPequenio;
     }
 

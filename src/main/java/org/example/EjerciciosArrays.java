@@ -1,7 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class EjerciciosArrays {
 
@@ -40,6 +40,7 @@ public class EjerciciosArrays {
                 }
             }
         }
+        //TODO metodo de encontrar sin comunes
         // String [] resultadoFinal;
         // if(elementosUnicos==listaComunes.length){
         // resultadoFinal = listaComunes;
@@ -77,8 +78,27 @@ public class EjerciciosArrays {
 
     }
 
-    private boolean puedoIncluirElemento(ArrayList<String> resultados, String elementoLista1, String elementoLista2) {
+    private boolean puedoIncluirElemento(List<String> resultados, String elementoLista1, String elementoLista2) {
         return elementoLista1.equals(elementoLista2) && !resultados.contains(elementoLista1);
+    }
+
+    public String[] encontrarComunesEnArrayBisBis(String[] lista1, String[] lista2) throws NullPointerException {
+        //Si puedo siempre uso la interfaz en vez de la clase
+        List<String> resultados = new ArrayList<>();
+
+        for (String elementoLista1 : lista1) {
+            for (String elementoLista2 : lista2) {
+                if (puedoIncluirElemento(resultados, elementoLista1, elementoLista2)) {
+                    resultados.add(elementoLista1);
+                }
+            }
+        }
+        String[] resultadosArray = new String[resultados.size()];
+        for (int i = 0; i < resultadosArray.length; i++) {
+            resultadosArray[i] = resultados.get(i);
+        }
+        return resultadosArray;
+
     }
 
     public double encontrarSegundoMasPequenio(double[] arreglo) throws NullPointerException {
